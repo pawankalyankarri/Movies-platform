@@ -1,0 +1,26 @@
+
+.homepage{
+    display: grid;
+    grid-template-columns: 10vw,1fr;
+    grid-template-areas: 'sidebar head'
+                          'sidebar main'
+                          'sidebar main';
+}
+
+.homepage .head{
+    grid-area: head;
+    height: 45vh;
+    background-color: red;
+}
+.homepage .sidebar{
+    grid-area: sidebar;
+    height: 65vh;
+}
+.homepage .mainpage{
+    grid-area: main;
+    height: 80vh;
+}
+.homepage .footer{
+    grid-area: footer;
+    height: 15vh ;
+}
