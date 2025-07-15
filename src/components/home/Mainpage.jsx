@@ -1,7 +1,10 @@
+import DisplayVideo from "../main/DisplayVideo";
+
 const MainPage = () => {
     return(
         <main className="mainpage">
-            <h4>main page</h4>
+            <DisplayVideo/>
+            {/* <h4>main page</h4> */}
         </main>
     )
 }

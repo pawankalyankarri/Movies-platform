@@ -9,7 +9,7 @@ const HomePage = () => {
             <Head/>
             <Sidebar/>
             <MainPage/>
-            <FooterPage/>
+            {/* <FooterPage/> */}
 
         </div>
     )

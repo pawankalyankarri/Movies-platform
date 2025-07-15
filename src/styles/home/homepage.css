@@ -1,26 +1,36 @@
 
 .homepage{
     display: grid;
-    grid-template-columns: 10vw,1fr;
+    grid-template-columns: 10vw 1fr;
     grid-template-areas: 'sidebar head'
                           'sidebar main'
-                          'sidebar main';
+                          'sidebar footer';
+
+    height: 100vh;
 }
 
 .homepage .head{
     grid-area: head;
     height: 45vh;
-    background-color: red;
+    width: 90vw;
+    
+
 }
 .homepage .sidebar{
     grid-area: sidebar;
-    height: 65vh;
+    /* height: 100vh; */
+    
 }
 .homepage .mainpage{
     grid-area: main;
-    height: 80vh;
+    /* height: 50vh; */
+    width: 90vw;
+    
+
 }
 .homepage .footer{
     grid-area: footer;
-    height: 15vh ;
+    height: 5vh ;
+    
+
 }

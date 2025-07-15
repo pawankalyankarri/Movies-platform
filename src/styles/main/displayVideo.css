@@ -1,0 +1,12 @@
+.show-video{
+    height: 100%;
+    width: 100%;
+}
+/* .show-video iframe{
+    height: 100vh;
+    width: 100%;
+} */
+.show-video video{
+    height: 100vh;
+    width: 100%;
+}

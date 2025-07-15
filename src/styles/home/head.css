@@ -1,0 +1,51 @@
+.head {
+  display: flex;
+  width: 100%;
+}
+
+.head .head-img {
+    width: 50vw;;
+    
+}
+.head .head-content {
+    width: 50vw;
+}
+.head .head-content .movie-title img{
+    width: 55px;
+    height: 50px;
+    border-radius: 8%;
+
+}
+.head .head-content .movie-title{
+    display: flex;
+
+
+}
+.head .head-content .movie-title .title{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.head .head-content .movie-title .title .m-name{
+    color: aliceblue;
+    font-weight:bold;
+}
+.head .head-content .movie-title .title p{
+    font-size: small;
+    margin-bottom: 0px;
+    letter-spacing: 0.cap;
+    padding:0 2%;
+    color:rgb(200, 198, 198);
+}
+.head .head-content .info p{
+    color: rgb(200, 198, 198);
+}
+.head .head-content .btn a{
+    padding: 20% 70%;
+    font-weight: bold;
+
+}
+.head .head-img img{
+    width: 100%;
+
+}
