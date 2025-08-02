@@ -17,6 +17,7 @@
 
 }
 .homepage .sidebar{
+    text-align: center;
     grid-area: sidebar;
     /* height: 100vh; */
     
@@ -24,7 +25,8 @@
 .homepage .mainpage{
     grid-area: main;
     /* height: 50vh; */
-    width: 90vw;
+    /* width: 90vw; */
+    width: 90%;
     
 
 }
