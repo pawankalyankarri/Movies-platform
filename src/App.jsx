@@ -11,13 +11,11 @@ function App() {
   return (
     <div className='apppage homepage'>
         
-            
+         <Sidebar/>   
         <Routes>
           <Route path='/' element={<HomePage/>}/>
           <Route path='/addmovie' element={<AddMovies/>} />
-        {/* <Route path="/head" element={<Head />} />
-        <Route path="/" element={<Sidebar />} />
-        <Route path="/main" element={<MainPage />} /> */}
+        
       </Routes>
 
     </div>

@@ -1,0 +1,19 @@
+.homepage .addmovie{
+    width: 100vw;
+    height: 100vh;
+    /* background-color: whitesmoke;
+    color:black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage .addmovie .addmovie-form{
+    /* background-color: whitesmoke !important;
+    color:black !important; */
+    width: 80%;
+}
+
+.homepage .addmovie .addmovie-form input{
+    background-color: aliceblue;
+}
