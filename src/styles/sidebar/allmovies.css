@@ -1,0 +1,19 @@
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+.allmovies .moviesinfo{
+    width: 100%;
+    height: 40vh;
+}
+.allmovies .moviesinfo .imgcard{
+    padding:0px;
+}
+.allmovies .moviesinfo .imgcard .img img{
+    width: 100%;
+    height: 100%;
+    
+}
