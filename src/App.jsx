@@ -5,6 +5,7 @@ import Head from './components/home/Head'
 import Sidebar from './components/home/Sidebar'
 import MainPage from './components/home/Mainpage'
 import AddMovies from './components/sidebar/AddMovies'
+import AllMovies from './components/allmovies/AllMovies'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path='/' element={<HomePage/>}/>
           <Route path='/addmovie' element={<AddMovies/>} />
+          <Route path='/allmovies' element={<AllMovies/>}  />
         
       </Routes>
 
