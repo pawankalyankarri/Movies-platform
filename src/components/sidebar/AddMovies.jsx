@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "../../styles/sidebar/addMovies.css";
 import axios from "axios";
 
@@ -59,45 +59,79 @@ const AddMovies = () => {
     "Biographical (Biopic)",
   ];
 
-  let [formData, setFormData] = useState({
-    mname: "",
-    dname: "",
-    mcontent: "",
-    myear: "",
-    mlang: "",
-    mgenre: "",
-    mimg: null,
-    mvideo: null,
-  });
 
-  function handlechange(e) {
-    let { id, value, files } = e.target;
-    setFormData((pre) => ({ ...pre, [id]: files ? files[0] : value }));
-  }
 
-  function sendData(e){
-    e.preventDefault()
-    console.log('here i send ')
-    let data = {
-      'mname':formData['mname'],
-      'mdir':formData['dname'],
-      'mcont':formData['mcontent'],
-      'myear':formData['myear'],
-      'mlang':formData['mlang'],
-      'mtype':formData['mgenre'],
-      'mimg':formData['mimg'],
-      'mvideo':formData['mvideo']
-    }
-    axios.post('http://127.0.0.1:8000/movie/getmovies',data)
+  // let [formData, setFormData] = useState({
+  //   mname: "",
+  //   dname: "",
+  //   mcontent: "",
+  //   myear: "",
+  //   mlang: "",
+  //   mgenre: "",
+  //   mimg: null,
+  //   mvideo: null,
+  // });
+
+  // function handlechange(e) {
+  //   let { id, value, files } = e.target;
+  //   setFormData((pre) => ({ ...pre, [id]: files ? files[0] : value }));
+  // }
+
+  // function sendData(e){
+  //   e.preventDefault()
+  //   console.log('here i send ')
+  //   let data = {
+  //     'mname':formData['mname'],
+  //     'mdir':formData['dname'],
+  //     'mcont':formData['mcontent'],
+  //     'myear':formData['myear'],
+  //     'mlang':formData['mlang'],
+  //     'mtype':formData['mgenre'],
+  //     'mimg':formData['mimg'],
+  //     'mvideo':formData['mvideo']
+  //   }
+  //   axios.post('http://127.0.0.1:8000/movie/getmovies',data)
     
+  // }
+
+  let mnameref = useRef()
+  let mdirref = useRef()
+  let mcontref = useRef()
+  let myearref = useRef()
+  let mlangref = useRef()
+  let mtyperef = useRef()
+  let mimgref = useRef()
+  let mvideoref = useRef()
+
+  const sendData = () => {
+    // e.preventDefault()
+    let data = {
+      mname: mnameref.current.value,
+      mdir : mdirref.current.value,
+      mcont: mcontref.current.value,
+      myear : myearref.current.value,
+      mlang : mlangref.current.value,
+      mtype : mtyperef.current.value,
+      mimg : mimgref.current.files[0],
+      mvideo : mvideoref.current.files[0],
+
+    }
+    axios.post('http://127.0.0.1:8000/movie/getmovies',data,{
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      }).then((resp)=>{
+      console.log(resp)
+      console.log('inserted successfully')
+    }).catch((err)=>{
+      console.log(err)
+      console.log('error occured')
+    })
   }
-
-
-  console.log(formData);
 
   return (
     <div className="container addmovie">
-      <form action="" className="addmovie-form" onSubmit={sendData}>
+      <form action="" className="addmovie-form" >
         <div className="row">
           <div className="col-6 mt-3">
             <label htmlFor="" className="form-label">
@@ -107,7 +141,8 @@ const AddMovies = () => {
               type="text"
               className="form-control"
               id="mname"
-              onChange={handlechange}
+              // onChange={handlechange}
+              ref={mnameref}
             />
           </div>
           <div className="col-6 mt-3">
@@ -118,7 +153,8 @@ const AddMovies = () => {
               type="text"
               className="form-control"
               id="dname"
-              onChange={handlechange}
+              // onChange={handlechange}
+              ref={mdirref}
             />
           </div>
 
@@ -130,7 +166,8 @@ const AddMovies = () => {
               name=""
               id="mcontent"
               className="form-control"
-              onChange={handlechange}
+              // onChange={handlechange}
+              ref={mcontref}
             ></textarea>
           </div>
           <div className="col-6 mt-3">
@@ -141,7 +178,8 @@ const AddMovies = () => {
               type="number"
               className="form-control"
               id="myear"
-              onChange={handlechange}
+              // onChange={handlechange}
+              ref={myearref}
             />
           </div>
 
@@ -154,11 +192,12 @@ const AddMovies = () => {
               list="lang"
               className="form-control"
               id="mlang"
-              onChange={handlechange}
+              // onChange={handlechange}
+              ref={mlangref}
             />
             <datalist id="lang">
               {langs.map((lang) => {
-                <option value="{lang}"></option>;
+                <option key={lang} value="{lang}"/>;
               })}
             </datalist>
           </div>
@@ -171,11 +210,12 @@ const AddMovies = () => {
               list="genre"
               className="form-control"
               id="mgenre"
-              onChange={handlechange}
+              // onChange={handlechange}
+              ref={mtyperef}
             />
             <datalist id="genre">
               {genres.map((genre) => {
-                <option value={genre}></option>;
+                <option key={genre} value={genre}/>;
               })}
             </datalist>
           </div>
@@ -188,24 +228,25 @@ const AddMovies = () => {
               type="file"
               className="form-control"
               id="mimg"
-              onChange={handlechange}
+              // onChange={handlechange}
+              ref={mimgref}
             />
           </div>
           <div className="col-6 mt-3">
             <label htmlFor="" className="form-label">
-              {" "}
               Upload Movie Video
             </label>
             <input
               type="file"
               className="form-control"
               id="mvideo"
-              onChange={handlechange}
+              ref={mvideoref}
+              // onChange={handlechange}
             />
           </div>
           <div className="col-6 mt-3">
             <div className="col-auto">
-              <button className="btn btn-success" type="submit">
+              <button className="btn btn-success" onClick={sendData}>
                 Add Moive
               </button>
               {/* <input type="sumbit" className="btn btn-success" value="submit" /> */}
