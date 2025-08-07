@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import '../../styles/sidebar/allmovies.css'
+import PlayMovie from "../main/PlayMovie";
+import { Link } from "react-router-dom";
 
 
 const AllMovies = () => {
@@ -18,14 +20,15 @@ const AllMovies = () => {
   }, []);
 
   return (
-    <div className="allmovies">
+    <div className="allmovies mt-2">
       {movies.map((movie) => {
         return (
-          <div key={movie.mid} className="row moviesinfo">
-            <div className=" imgcard col-4">
+          <div key={movie.mid} className=" moviesinfo">
+            <div className=" imgcard ">
                 <div className="img">
-                    <img src={`http://127.0.0.1:8000/${movie.mimg}`} alt="img" /> 
+                  <Link to='/playmovie'  > <img src={`http://127.0.0.1:8000/${movie.mimg}`} alt="img"  /> </Link> 
                 </div>
+                {/* <PlayMovie mvideo={movie.mvideo}/> */}
             </div>
             
           </div>

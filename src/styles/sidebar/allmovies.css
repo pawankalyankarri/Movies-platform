@@ -4,16 +4,23 @@
     box-sizing: border-box;
 }
 
-
+.allmovies{
+    display: flex;
+}
 .allmovies .moviesinfo{
     width: 100%;
     height: 40vh;
+
 }
 .allmovies .moviesinfo .imgcard{
     padding:0px;
 }
+/* .allmovies .moviesinfo .imgcard .img{
+    display: flex;
+    flex-direction: column;
+} */
 .allmovies .moviesinfo .imgcard .img img{
-    width: 100%;
+    width: 98%;
     height: 100%;
     
 }
