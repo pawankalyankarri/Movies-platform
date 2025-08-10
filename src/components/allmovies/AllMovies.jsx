@@ -26,10 +26,17 @@ const AllMovies = () => {
           <div key={movie.mid} className=" moviesinfo">
             <div className=" imgcard ">
                 <div className="img">
-                  <Link to='/playmovie'  > <img src={`http://127.0.0.1:8000/${movie.mimg}`} alt="img"  /> </Link> 
+                  <Link to='/playmovie' state={movie.mvideo}  > <img src={`http://127.0.0.1:8000/${movie.mimg}`} alt="img"  /> </Link> 
                 </div>
                 {/* <PlayMovie mvideo={movie.mvideo}/> */}
+                <div className="m_info">
+                  <button className="btn btn-primary">Watch Now</button>
+                  <p><span>{movie.mdir}</span><span>{movie.mlang}</span>
+                  <span>{movie.mtype}</span>
+                  <span>{movie.mcont}</span></p>
+                </div>
             </div>
+
             
           </div>
         );

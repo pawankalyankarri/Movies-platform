@@ -1,4 +1,4 @@
-*{
+/* *{
     margin:0px;
     padding: 0px;
     box-sizing: border-box;
@@ -6,21 +6,86 @@
 
 .allmovies{
     display: flex;
+    width: 100%;
+    height: 100%;
 }
 .allmovies .moviesinfo{
     width: 100%;
-    height: 40vh;
+    height: 100%;
 
 }
 .allmovies .moviesinfo .imgcard{
     padding:0px;
 }
-/* .allmovies .moviesinfo .imgcard .img{
+.allmovies .moviesinfo .imgcard .img{
     display: flex;
     flex-direction: column;
-} */
-.allmovies .moviesinfo .imgcard .img img{
-    width: 98%;
+    width: 24%;
+    height: 30%;
+
+}
+.allmovies .moviesinfo .imgcard .img a img{
+    width: 100%;
     height: 100%;
     
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.allmovies {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 1%;       
+}
+
+.moviesinfo {
+  flex: 0 0 23%; /* flex: flex-grow flex-shrink flex-basis; */
+  position: relative;
+}
+
+.imgcard {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  /* overflow: hidden; */
+}
+
+.imgcard .img {
+  width: 100%;
+}
+
+.imgcard .img a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.allmovies .m_info{
+  display: none;
+  position: absolute;
+  
+
+
+
+}/*
+.allmovies .img:hover + .m_info {
+  display: flex;  show when image container is hovered
+  flex-direction: column;
+}
+ */
+
+
+/* playMovie Styles */
+
+.playMovie{
+  width: 100%;
+  height: 100vh;
+
+}
+.playMovie video{
+  width: 100%;
+  height: 95%;
 }

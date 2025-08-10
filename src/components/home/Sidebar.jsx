@@ -12,7 +12,10 @@ const Sidebar = () => {
           <Link to="/allmovies">Movies</Link>
         </li>
         <li>
-          <Link to="addmovie">Add Movie</Link>
+          <Link to="/addmovie">Add Movie</Link>
+        </li>
+        <li>
+          <Link>Telugu Movies</Link>
         </li>
       </ul>
     </aside>
