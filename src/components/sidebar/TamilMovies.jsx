@@ -1,33 +1,31 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
-const TeluguMovies = () => {
-  let [teluguM, setTeluguM] = useState([]);
+const TamilMovies = () => {
+  let [tamilM, setTamilM] = useState([]);
 
   useEffect(() => {
     axios
       .get("http://127.0.0.1:8000/movie/getmovies")
       .then((res) => {
         console.log(res);
-        setTeluguM(res.data.filter((obj) => obj.mlang.includes("telugu")));
+        setTamilM(res.data.filter((obj) => obj.mlang.includes("tamil")));
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
-  // console.log("here", teluguM);
 
   return (
     <div>
-      <h1>teluguMovies</h1>
+      <h1>tamil Movies</h1>
+
       <div className="movies">
-        {teluguM.map((movie) => {
+        {tamilM.map((movie) => {
           return (
             <div className="card" key={movie.mid}>
-              <Link  to="/playmovie" state={movie.mvideo}>
-                <img src={`http://127.0.0.1:8000/${movie.mimg}`} alt="" />
-              </Link>
+                        <Link to='/playmovie' state={movie.mvideo}  ><img src={`http://127.0.0.1:8000/${movie.mimg}`} alt="" /></Link>
             </div>
           );
         })}
@@ -36,4 +34,4 @@ const TeluguMovies = () => {
   );
 };
 
-export default TeluguMovies;
+export default TamilMovies;

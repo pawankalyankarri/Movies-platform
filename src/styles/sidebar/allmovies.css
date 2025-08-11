@@ -39,7 +39,8 @@
 .allmovies {
   display: flex;
   flex-wrap: wrap; 
-  gap: 1%;       
+  gap: 1%;   
+   
 }
 
 .moviesinfo {
@@ -88,4 +89,42 @@
 .playMovie video{
   width: 100%;
   height: 95%;
+}
+
+/* Each lang Movie styles */
+.movies{
+  width: 100%;
+  display: flex;
+  gap:1.5%
+
+}
+.movies .card{
+  width: 25%;
+
+}
+.movies .card a{
+  width: 100%;
+}
+.movies .card img {
+  width: 100%;
+  height: auto;
+}
+
+
+/* genre styles */
+
+.genre{
+  width:100%;
+  display: flex;
+  gap:1.5%
+}
+.genre .card{
+  width: 25%;
+}
+.genre .card a{
+  width: 100%;
+}
+.genre .card img {
+  width: 100%;
+  height: auto;
 }
