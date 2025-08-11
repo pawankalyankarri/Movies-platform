@@ -20,7 +20,7 @@ const AllMovies = () => {
   }, []);
 
   return (
-    <div className="allmovies mt-2">
+    <div className="allmovies container mt-2">
       {movies.map((movie) => {
         return (
           <div key={movie.mid} className=" moviesinfo">

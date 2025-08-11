@@ -1,20 +1,48 @@
 .sidebar{
     margin-top: 20%;
+    width: 100%;
+    /* margin-right: 3rem; */
 }
-.sidebar ul{
+.sidebar .outerul{
     display: flex;
     flex-direction: column;
-    position:fixed;
+    /* position:fixed; */
 }
-.sidebar ul li{
+.sidebar .outerul li{
     list-style-type: none;
-    margin:10% 0
+    margin:10% 0;
+    font-size: large;
+    font-weight: bold;
+    color:whitesmoke
 
 }
-.sidebar ul li a{
-   text-decoration: none; 
+.sidebar .outerul li a{
+   text-decoration: none;
    font-size: large;
    font-weight: bold;
-   color:whitesmoke
+   color:whitesmoke 
+
+
+}
+.sidebar .outerul .langul{
+    display: none;
+    position: absolute;
+    left:5%;
+    z-index: 2;
+    
+}
+.sidebar .outerul .langli:hover > .langul{
+    display: block;
+}
+
+.sidebar .outerul .genreul{
+    display: none;
+    position: absolute;
+    left:5%;
+    z-index: 2;
+    
+}
+.sidebar .outerul .genreli:hover > .genreul{
+    display: block;
 
 }

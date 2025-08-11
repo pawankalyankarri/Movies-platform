@@ -1,0 +1,16 @@
+.mainpage{
+  width:100%;
+  display: flex;
+  gap:1%;
+  flex-wrap: wrap;
+}
+.mainpage .card{
+  width: 24%;
+}
+.mainpage .card a{
+  width: 100%;
+}
+.mainpage .card img {
+  width: 100%;
+  height: auto;
+}

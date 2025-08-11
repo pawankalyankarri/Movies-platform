@@ -6,7 +6,7 @@ import "../../styles/home/head.css";
 import MainPage from "./Mainpage";
 const HomePage = () => {
   return (
-    <div className="homepage">
+    <div className="homepage ">
       <div className="head">
         <HeadImg />
         <HeadContent />
@@ -16,7 +16,6 @@ const HomePage = () => {
         <MainPage />
       </div>
 
-      <div></div>
     </div>
   );
 };
